@@ -11,8 +11,7 @@ $url = 'https://www.mapmyindia.com/api/advanced-maps/doc/sample/respatosgst.php?
 
 $header = array();
 $header[] = 'Content-length: 0';
-$header[] = 'Content-type: application/json';
-$header[] = 'Authorization: ' . $token_type . ' ' . $access_token . '';
+$header[] = 'Content-type: text/html';
 
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);
@@ -42,5 +41,5 @@ if ($http_status == '200') {
     $res['status'] = 'fail';
     $res['data'] = str_replace("message:", "", $response_header[0][5]);
 }
-echo json_encode($res);
+echo json_encode($result);
 ?>
